@@ -1,0 +1,31 @@
+{
+  "name": "FL_Cataloger",
+  "version": "1.0.0",
+  "description": "Cataloging Finishers",
+  "main": "public/main.js",
+  "proxy": "http://localhost:3000",
+  "homepage": "./",
+  "scripts": {
+    "start": "electron .",
+    "build": "yarn electron-builder"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.1",
+    "csv-parser": "^3.0.0",
+    "csvtojson": "^2.0.10",
+    "electron-is-dev": "^1.2.0",
+    "express": "^4.17.1",
+    "json2csv": "^5.0.5",
+    "socket.io": "^3.1.0",
+    "socket.io-client": "^3.1.0",
+    "socket.io-stream": "^0.9.1",
+    "socketio": "^1.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1"
+  }
+}
