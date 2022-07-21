@@ -8,9 +8,6 @@ const os = require('os');
 const path = require('path')
 const fs = require('fs')
 //const { socket } = require('../src/components/socket');
-// Dgram stuff
- // const dgram = require('dgram');
- let filePath
 
 // Ports
 const socketPort = 42003
@@ -18,22 +15,13 @@ let lynxOutputPort = 44999 || process.env.PORT
 let lynxOutputHost = '127.0.0.1'
 let lynxStore
 
-
-var usePath
-
-// http.listen(socketPort, () => {
-//   // console.log('listening on *:42200');
-// });
-
 const resServer = net.createServer(resConn => {
   let placeHolder = 0
-  console.log('new client')
+  console.log('scoreboard connection')
 
   resConn.on('data', data => {
-    
     var datagram = Buffer.from(data).toString()
     // 4 characters for place, 24 characters for athlete name, 30 for affiliation
-    
     let placeVal = datagram.substring(0,4);
     let athName = datagram.substring(4,28);
     let athAffiliation = datagram.substring(28,58)
@@ -44,7 +32,7 @@ const resServer = net.createServer(resConn => {
       getImage(datagram)
       placeHolder = placeVal
     } else {
-
+      // nothing, program has run
     }
   })
 
@@ -55,55 +43,33 @@ const resServer = net.createServer(resConn => {
 
 resServer.listen(42200)
 
-
-function blankityWatcher(bestPath){
- // console.log(bestPath)
-  usePath = bestPath
-}
-
-
-
-// http.listen(socketPort, () => {
-//   // console.log('listening on *:43325');
-// });
-
-
-const server = net.createServer(conn => {
-  console.log('new client')
-
-// next line works as basic echo server
-//  conn.write('command=ResultsPrint;\r')\
-
+const remoteControl = net.createServer(conn => {
+  console.log('remoteControl is connected') 
 
 // next line gets info about the camera image
 // conn.write('command=ImageGetInfo;Window=2\r')
-
+// next line gets the image
 // conn.write(`command=ImageExport;Window=2;Area=-100%,-100%,100%,100%;File=bazooka;Time=22.45\r`)
-
-
 
   conn.on('end', () => {
     console.log('client disconnected')})
 
 })
 
-server.listen(42000)
+remoteControl.listen(42000)
 
-const lynxServer = new net.Server()
+// const lynxServer = new net.Server()
 
 function getImage(datagram) {
   console.log('getImage')
-  let athName = datagram.substring(4,28);
-  let athAffiliation = datagram.substring(28,58)
-  let time = datagram.substring(58,68);
+  let athName = datagram.substring(4,28).trimEnd().replace(/ /g, "");
+  let athAffiliation = datagram.substring(28,58).trimEnd().replace(/ /g, "")
+  let time = datagram.substring(58,68).trimEnd().replace(/ /g, "")
 
    let imageFileName = `${athAffiliation}_${athName}.jpg`
     console.log((`command=ImageExport;Window=2;Area=-100%,-100%,100%,100%;File=${imageFileName};Time=${time}\r`))
-    conn.write(`command=ImageExport;Window=2;Area=-100%,-100%,100%,100%;File=${imageFileName};Time=${time}\r`)
+    // conn.write(`command=ImageExport;Window=2;Area=-100%,-100%,100%,100%;File=${imageFileName};Time=${time}\r`)
   }
-
-
-
 
 
 // var onevent = client.onevent;
@@ -117,4 +83,4 @@ function getImage(datagram) {
 
 
 
-module.exports.blankityWatcher = blankityWatcher
+// module.exports.blankityWatcher = blankityWatcher
