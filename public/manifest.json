@@ -1,6 +1,6 @@
 {
-  "short_name": "FieldWorks Server",
-  "name": "FieldWorks Server",
+  "short_name": "FL_Cataloger",
+  "name": "FieldWorks FL_Cataloger",
   "icons": [
     {
       "src": "favicon.ico",
