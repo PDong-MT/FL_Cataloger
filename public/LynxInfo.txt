@@ -233,11 +233,14 @@ ImageExport and ImagePrint
 --------------------------
 Request Packet: Command=ImageExport;[<Option Pair>]*<Newline>
 Request Packet: Command=ImagePrint;[<Option Pair>]*<Newline>
+
 Request Packet Options:
+
 Window=<window number>;
  <window number> specifies which camera window to export or print,
 numbering starts at 1. If this option is omitted then the first window is
 exported or printed.
+
 File=<filename>;
  <filename> specifies the name of the file for ImageExport. If this option
 is omitted then the event's standard name will be used. If <filename> does
@@ -245,6 +248,7 @@ not have an extension or has an unknown extension then the extension will be
 set to ".jpg" and a JPEG file will be written. If the extension is ".tga"
 then a TARGA file will be written. If the file already exists it will be
 overwritten. This option is ignored for the ImagePrint command.
+
 Time=[<time>][,[<y>][,[<time2>][,[<y2>]]]];
  <time> and <y> specify which part of the image to export or print. If
 <time> and/or <y> are omitted then the current hash line value is used. If
@@ -252,11 +256,13 @@ this option is omitted completely then the currently visible image is
 exported or printed. If <time2> and/or <y2> are included then they specify
 the right and/or bottom coordinates and <time> and/or <y> specify the
 left and/or top coordinates.
+
 Area=[<left>][,[<top>][,[<right>][,[<bottom>]]]];
  <left>, <top>, <right>, and <bottom> specify which part of the image to
 export or print. If the "Time" option is specified then <left> and <top>
 default to -200r and <right> and <bottom> default to 200r. If the "Time"
 option is not specified then all four values default to 0r.
+
 Reply Packet: Reply=Ok;<Newline>
 Examples:
 Send: Command=ImageExport;File=image;<Newline>
