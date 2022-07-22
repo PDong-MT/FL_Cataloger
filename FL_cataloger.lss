@@ -1,0 +1,37 @@
+; Lynx Scoreboard Script (FL_cataloger.LSS)
+;
+; Copyright (c) 2022 FieldWorks Software, LLC
+;
+; Patrick MacDonald
+; FieldWorks Software, LLC 
+;
+; Notes:
+;  + Empty lines and lines that start with a semicolon are ignored. Lines
+;    cannot be longer than 255 characters.
+;  + Lines that start with two semicolons indicate a section header.
+
+
+
+;;ResultsTrailer
+; This is sent once each time the scoreboard is updated with results. It
+; is sent after all result lines are sent.
+; Line codes are identical to the ResultsHeader line codes.
+; Next Line is sent to indicate the datagram is done.
+\13\00\03\04
+
+;;Result
+; This is sent once for each result line displayed on the scoreboard.
+; Line codes:
+;  \00  No variable
+;  \01  Place
+;  \02  Lane
+;  \03  Id
+;  \04  Name
+;  \05  Affiliation
+;  \06  Time
+; Register[0] is initialized with the index of the current result line and
+; will range from 0 through PageSize - 1.
+\01%-4.4s\
+\04%-24.24s\
+\05%-30.30s\
+\06%10.10s\
