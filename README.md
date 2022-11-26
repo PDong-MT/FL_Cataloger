@@ -38,4 +38,4 @@ FL_Cataloger will run in the background before eventually running out of people 
 
 Known Issues:
 -Lynx will automatically write over previous images, so if Joe Smith from Random University is encountered in another meet you are cataloging, only the most recent image will be saved. You can subvert this by moving older images to new folders.
--This entire program can be run via CLI by grabbing the processor.js file and running it via Node. If you don't know what this means, you should likely download the Electron based file at FieldWorks.app
+-This entire program can be run via CLI by grabbing the processor.js file and running it via Node. If you don't know what this means, you should likely download the Electron based file at www.FieldWorks.app/catalog/FL_cataloger.lss and www.FieldWorks.app/catalog/FL_cataloger_Setup.exe
