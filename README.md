@@ -50,5 +50,5 @@ www.FieldWorks.app/catalog/FL_Cataloger_Setup.exe
 New Downloads, as of 11-26-2022:
 www.FieldWorks.app/catalog/FL_cataloger_updated.lss<br>
 www.FieldWorks.app/catalog/FL_Cataloger_Setup_1.0.0_aff_athN.exe  (Outputs Affiliation_AthleteName.jpg)<br>
-www.FieldWorks.app/catalog/FL_Cataloger_Setup_1.0.0_bib_W1.exe (Outputs ID#.jpg, set to camera 1, ideal for road races without a line scan in #1)<br>
-www.FieldWorks.app/catalog/FL_Cataloger_Setup_1.0.0_bib_W2.exe (Outputs ID#.jpg, set to camera 2)<br>
+www.FieldWorks.app/catalog/FL_Cataloger_Setup_1.0.0_bibW1.exe (Outputs ID#.jpg, set to camera 1, ideal for road races without a line scan in #1)<br>
+www.FieldWorks.app/catalog/FL_Cataloger_Setup_1.0.0_bibW2.exe (Outputs ID#.jpg, set to camera 2)<br>
