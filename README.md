@@ -1,5 +1,7 @@
 # fl_cataloger
 
+Updated, direct download links at the bottom
+
 This is a simple program, acting as a remote control for FinishLynx. The source code is published here, but a cleaner download can be found at FieldWorks.app, where the program is packaged up in an Electron shell that can easily be installed.
 
 The entirety of the program is here in full, and you are welcome to clone the repo and compile your own.
@@ -14,7 +16,7 @@ For this to work natively, you'll need:
 
 -FinishLynx 12.10 (available August 2022)
 -FL_Cataloger
--FL_Cataloger.lss installed in your Lynx Directory
+-FL_Cataloger.lss installed in your Lynx Directory (or updated if using newer version)
 -NetCom plugin (there are work-arounds, but this is easiest)
 
 Lynx needs several settings:
@@ -38,4 +40,14 @@ FL_Cataloger will run in the background before eventually running out of people 
 
 Known Issues:
 -Lynx will automatically write over previous images, so if Joe Smith from Random University is encountered in another meet you are cataloging, only the most recent image will be saved. You can subvert this by moving older images to new folders.
--This entire program can be run via CLI by grabbing the processor.js file and running it via Node. If you don't know what this means, you should likely download the Electron based file at www.FieldWorks.app/catalog/FL_cataloger.lss and www.FieldWorks.app/catalog/FL_cataloger_Setup.exe
+-This entire program can be run via CLI by grabbing the processor.js file and running it via Node. If you don't know what this means, you should likely download the Electron based file below.
+
+Old Files:
+www.FieldWorks.app/catalog/FL_cataloger.lss
+www.FieldWorks.app/catalog/FL_Cataloger_Setup.exe
+
+New Downloads, as of 11-26-2022:
+www.FieldWorks.app/catalog/FL_cataloger_Bib.lss
+www.FieldWorks.app/catalog/FL_Cataloger_Setup_1.1.exe  (Outputs Affiliation_AthleteName.jpg)
+www.FieldWorks.app/catalog/FL_cataloger_Setup_1.1_bib_1Camera.exe (Outputs ID#.jpg, set to camera 1, ideal for road races without a line scan in #1)
+www.FieldWorks.app/catalog/FL_cataloger_Setup_1.1_bib_2Camera.exe (Outputs ID#.jpg, set to camera 2)
